@@ -1,0 +1,23 @@
+/******************************************************************************
+ * 2. Create an outer class with a function display, again create another class inside
+ * the outer class named inner with a function called display and call the two functions in the main class.
+*******************************************************************************/
+import java.util.*;
+class outer{
+    int a=6,b=5;
+    public void display(){
+        System.out.println( "inside outer " + a + " " + b );
+        class inner{
+            public void display(){
+                System.out.println( "inside inner " + a + " " + b );
+            }
+        }
+        new inner().display();
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        new outer().display();
+    }
+}
+
