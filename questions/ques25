@@ -1,0 +1,54 @@
+/******************************************************************************
+ * 4. Create class box and box3d. box3d is extended class of box. The above 
+two classes going to pull fill following requirement 
+Include constructor.
+set value of length, breadth, height Find out area and volume. 
+Note: Base class and sub classes have respective methods and instance variables.
+*******************************************************************************/
+import java.util.*;
+class box{
+    private int length,breadth;
+    box(int length,int breadth){
+        this.length=length;
+        this.breadth=breadth;
+    }
+    public void setlength(int length){
+        this.length=length;
+    }
+    public void setbreadth(int breadth){
+        this.breadth=breadth;
+    }
+    public int area(){
+        return length*breadth;
+    }
+    
+}
+class box3d extends box{
+    private int height;
+    box3d(){
+        super(4,5);
+        height=5;
+    }
+    public void setheight(int height){
+        this.height=height;
+    }
+    public int volume(){
+        int vol=super.area()*height;
+        return vol;
+    }
+    
+}
+
+public class Main {
+    public static void main(String[] args){
+        box obj= new box(4,5);
+        obj.setlength(6);
+        obj.setbreadth(7);
+        System.out.println(obj.area());
+        box3d obj1=new box3d();
+        obj1.setheight(5);
+        System.out.println(obj1.volume());
+        
+    }
+}
+
