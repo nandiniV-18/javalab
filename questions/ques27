@@ -1,0 +1,54 @@
+/******************************************************************************
+ * 3) Create a base class Fruit which has name, taste and size as its attributes.
+ * A method called eat() is created which describes the name of the fruit and its taste.
+ * Inherit the same in 2 other classes Apple and Orange and override the eat() method to represent each fruit taste.
+*******************************************************************************/
+import java.util.*;
+class Fruit{
+    String name,taste;int size;
+    Fruit(String name,String taste,int size){
+        this.name=name;
+        this.taste=taste;
+        this.size=size;
+    }
+    public void eat(){
+        System.out.println("name of the Fruit is: "+ name +" , its taste: " + taste +" and its size :" + size);
+    }
+}
+class Apple extends Fruit{
+    Apple(String name,String taste,int size){
+        super(name,taste,size);
+    }
+    public void eat(){
+        System. out. println ( " Name of the fruit is Apple " ) ;
+
+       System. out. println ( " Taste of the fruit is sweet " ) ;
+    }
+    
+}
+class orange extends Fruit
+
+{
+orange(String name,String taste,int size){
+        super(name,taste,size);
+    }
+   public void eat ( ) 
+
+  {
+       System. out. println ( " Name of the fruit is Orange " ) ;
+
+       System. out. println ( " Taste of the fruit is sour " ) ;
+
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args){
+    
+        Apple obj= new Apple("Gauva","good",1);
+        obj.eat();
+        new Fruit("banana","fair",2).eat();
+    }
+}
+
