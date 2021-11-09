@@ -1,0 +1,121 @@
+/******************************************************************************
+ * Q9. Create class Number with only one private instance variable as a int primitive type. 
+ * Initialize it with parameterised constructor and include the following methods  isZero( ), 
+ * isPositive(), isNegative( ), isOdd( ), isEven( ), isPrime(), isAmstrong() 
+the above methods return boolean primitive type value. 
+getFactorial(), getSqrt(), getSqr(), sumDigits()  these methods return int primitive type value.  
+dispBinary(), dispOctal(), displayhexa() these method return string value 
+*******************************************************************************/
+import java.util.*;
+class number{
+    private int num;
+    number(int num){
+        this.num=num;
+    }
+    public boolean isZero(){
+        if(num==0)
+        return true;
+        else
+        return false;
+    }
+    public boolean isPositive()
+    {
+        if(num>0)
+        return true;
+        else
+        return false;
+    }
+    public boolean isNegative(){
+        if(num<0)
+        return true;
+        else
+        return false;
+    }
+    public boolean isOdd(){
+        if(num%2!=0)
+        return true;
+        else return false;
+    }
+    public boolean isEven(){
+        if(num%2==0)
+        return true;
+        else
+        return false;
+    }
+    public boolean isPrime(){
+        int f=0;
+        for(int i=2;i<=Math.sqrt(num);i++){
+            if(num%i==0){
+                f=1;break;
+            }
+        }
+        if(f==1)
+        return false;
+        else
+        return true;
+    }
+    public boolean isAmstrong(){
+        int n=num,sum=0;
+        while(n!=0){
+            int r=n%10;
+            sum+=(r*r*r);
+            n/=10;
+        }
+        if(num==sum)
+        return true;
+        else
+        return false;
+    }
+    public int getFactorial(){
+        int f=1;
+        for(int i=2;i<=num;i++){
+            f*=i;
+        }
+        
+        return f;
+    }
+    public int getSqrt(){
+        int k=(int)Math.sqrt(num);
+        return k;
+    }
+    public int sumDigits(){
+        int n=num,sum=0;
+        while(n!=0){
+            sum+=n%10;
+            n/=10;
+        }
+        return sum;
+    }
+    public String dispBinary(){
+        return Integer.toBinaryString(num);
+    }
+    public String dispOctal(){
+        return Integer.toOctalString(num);
+    }
+    public String displayhexa(){
+        return Integer.toHexString(num);
+    }
+}
+public class Main {
+    public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num= sc.nextInt();
+    number obj =new number(num); 
+    boolean k;
+    System.out.println(obj.isZero());
+    System.out.println(obj.isPositive());
+    System.out.println(obj.isNegative());
+    System.out.println(obj.isAmstrong());
+    System.out.println(obj.isEven());
+    System.out.println(obj.isOdd());
+    System.out.println(obj.isPrime());
+    System.out.println(obj.getSqrt());
+    System.out.println(obj.getFactorial());
+    System.out.println(obj.sumDigits());
+    System.out.println(obj.dispBinary());
+    System.out.println(obj.displayhexa());
+    System.out.println(obj.dispOctal());
+    
+    
+    }
+}
