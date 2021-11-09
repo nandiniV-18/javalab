@@ -1,0 +1,31 @@
+/******************************************************************************
+ *  write a Java program to find if the given number is palindrome or not
+
+Example1)
+C:\>java Sample 110011
+O/P: 110011 is a palindrome
+
+Example2)
+C:\>java Sample 1234
+O/P: 1234 is not a palindrome
+*******************************************************************************/
+import java.util.*;
+public class Main{
+    public static void main (String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter no.");
+    int n=sc.nextInt();
+    int m=n;
+    int sum=0;
+    while(n!=0){
+        sum = (sum*10) + (n%10);
+        n/=10;
+    }
+  
+    if(sum == m)
+    System.out.println("palindrome no.");
+    else
+    System.out.println("not palindrome");
+    
+    }
+}
