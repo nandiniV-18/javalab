@@ -1,0 +1,53 @@
+/******************************************************************************
+ * Q4. Design an application in java that contains a class Student having properties name and percentage. 
+ * Create a class Test that declares three instances of Student class.
+ * The values are passed through constructor at the time of its object creation.
+ * The output should be the name and percentage of the topper.
+*******************************************************************************/
+import java.util.*;
+class Student
+{
+  String name;
+  int percentage;
+    Student (String name, int percentage)
+  {
+    this.name = name;
+    this.percentage = percentage;
+  }
+  Student(){
+      name="";
+      percentage=0;
+  }
+  public void topper(Student arr[]){
+         for (int i = 0; i < arr.length-1; i++) {
+            int minindex = i;
+            double minval = arr[i].percentage;
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[j].percentage<minval){
+                    int tempp = arr[j].percentage;
+                    String temps = arr[j].name;
+                    arr[j].percentage = arr[minindex].percentage;
+                    arr[j].name = arr[minindex].name;
+                    arr[minindex].percentage = tempp;
+                    arr[minindex].name = temps;
+                }
+            }
+        }
+        System.out.println("name: " + arr[arr.length-1].name +" percentage: " + arr[arr.length-1].percentage);
+    }
+ 
+}
+public class Main{
+    public static void main (String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter no. of students in class");
+    int n=sc.nextInt();
+    Student arr[]=new Student[n];
+    for(int i=0;i<n;i++){
+        int percentage=sc.nextInt();
+        String name=sc.next();
+        arr[i]=new Student(name,percentage);
+    }
+    new Student().topper(arr);
+    }
+}
