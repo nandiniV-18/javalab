@@ -1,0 +1,66 @@
+/******************************************************************************
+ * Q2. Design a class Room that has properties AC_ON, HOME_THEATRE_ON, FAN_ON and LIGHT_ON 
+ * that stores Boolean values to indicate whether the appliance is ON or OFF. 
+ * Design a menu driven program in java that puts ON/OFF the corresponding appliances and gives appropriate message.
+ * If the total power consumed is more than 2kW, show a message Overload. Assume AC consumes 1200 watts, Home Theatre consumes 600 watts
+ * , Fan consumes 400 watts and light consumes 100 watt
+ * 
+*******************************************************************************/
+import java.util.*;
+class Room{
+    boolean AC_ON,HOME_THEATRE_ON,FAN_ON,LIGHT_ON;double cost=0;
+    Room(boolean AC_ON,boolean HOME_THEATRE_ON,boolean FAN_ON,boolean LIGHT_ON){
+        this.AC_ON=AC_ON;
+        this.HOME_THEATRE_ON=HOME_THEATRE_ON;
+        this.FAN_ON=FAN_ON;
+        this.LIGHT_ON=LIGHT_ON;
+    }
+    public void menu(String check){
+        switch(check){
+            case "AC":
+                if(AC_ON)
+                {System.out.println("AC is on");cost+=1200;}
+                else
+                System.out.println("AC is OFF");
+                break;
+            case "HOME_THEATRE":
+                if(HOME_THEATRE_ON)
+                {System.out.println("HOME_THEATRE is on");cost+=600;}
+                else
+                System.out.println("HOME_THEATRE is off");
+                break;
+            case "FAN":
+                if(FAN_ON)
+                {System.out.println("FAN is on"); cost+=400;}
+                else 
+                System.out.println("FAN is off");
+                break;
+            case "LIGHT":
+                if(LIGHT_ON)
+                {System.out.println("LIGHT is on");cost+=100;}
+                else
+                System.out.println("LIGHT is off");
+                break;
+            default: System.out.println("invalid  input");
+
+        }
+    }
+    public void calculate(){
+        if(cost>2000)
+        System.out.println("Overload");
+        else
+        System.out.println(cost);
+    }
+}
+public class Main {
+    public static void main(String[] args){
+   // Scanner sc=new Scanner(System.in);
+    Room obj =new Room(false,true,false,true);
+    obj.menu("LIGHT");
+    obj.menu("AC");
+    obj.menu("HOME_THEATRE");
+    obj.menu("FAN");
+    obj.calculate();
+        
+    }
+}
