@@ -1,0 +1,32 @@
+/******************************************************************************
+Q3. Design a java program to display the number of instances created so far of a specific class.
+
+*******************************************************************************/
+import java.util.*;
+class Room{
+    boolean AC_ON,HOME_THEATRE_ON,FAN_ON,LIGHT_ON;
+    public static int count=0;
+    Room(boolean AC_ON,boolean HOME_THEATRE_ON,boolean FAN_ON,boolean LIGHT_ON){
+        this.AC_ON=AC_ON;
+        this.HOME_THEATRE_ON=HOME_THEATRE_ON;
+        this.FAN_ON=FAN_ON;
+        this.LIGHT_ON=LIGHT_ON;
+        count++;
+    }
+   Room(){
+       count++;
+   }
+    
+}
+public class Main {
+    public static void main(String[] args){
+   // Scanner sc=new Scanner(System.in);
+    Room obj =new Room(false,true,false,true);
+    new Room();
+    new Room(false,true,true,true);
+    new Room();
+    System.out.println(Room.count);
+            
+    }
+}
+
