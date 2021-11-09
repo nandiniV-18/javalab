@@ -1,0 +1,21 @@
+/******************************************************************************
+ * Q2. Given two strings, append them together (known as "concatenation") and return the result.
+ * However, if the concatenation creates a double-char, then omit one of the chars. 
+ * If the inputs are “Mark” and “Kate” then the output should be “markate”. (The output should be in lowercase)
+*******************************************************************************/
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    String s=sc.next();
+    String str=sc.next();
+    s=s.toLowerCase();
+    str=str.toLowerCase();
+    if(s.charAt(s.length()-1)==str.charAt(0))
+    System.out.println(s.substring(0,s.length()-1)+str);
+    else
+    System.out.println(s+str);
+    
+    }
+}
